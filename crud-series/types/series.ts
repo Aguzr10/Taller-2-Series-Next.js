@@ -1,4 +1,4 @@
-// Modelo principal de una serie
+// modelo de datos de una serie
 export interface Serie {
   id: number;
   title: string;
@@ -10,8 +10,8 @@ export interface Serie {
   description: string;
 }
 
-// Datos necesarios para crear o editar (sin el id autogenerado)
+// datos para el formulario al crear o editar (sin id)
 export type SerieFormData = Omit<Serie, "id">;
 
-// Errores de validacion para el formulario
+// mensajes de error campo por campo
 export type SerieErrors = Partial<Record<keyof SerieFormData, string>>;

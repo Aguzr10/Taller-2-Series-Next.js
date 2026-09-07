@@ -1,6 +1,6 @@
 import { Serie } from "@/types/series";
 
-// Series iniciales para precargar si localStorage esta vacio
+// 6 series por defecto para precargar si localstorage esta vacio
 export const initialSeries: Serie[] = [
   {
     id: 1,
