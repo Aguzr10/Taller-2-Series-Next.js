@@ -37,8 +37,8 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-[#070b14] text-neutral-100 selection:bg-[#A50044] selection:text-white">
         {/* envolvemos con el contexto para que cualquier pagina o componente acceda al estado */}
         <SeriesProvider>
-          {/* linea decorativa superior con los colores del barca */}
-          <div className="h-[2.5px] w-full bg-gradient-to-r from-[#004D98] via-[#A50044] to-[#EDBB00]" />
+          {/* linea decorativa superior con los colores blaugrana */}
+          <div className="h-[2.5px] w-full bg-gradient-to-r from-[#004D98] to-[#A50044]" />
           <Navbar />
           <main className="flex-1">{children}</main>
           {/* pie de pagina sencillo */}

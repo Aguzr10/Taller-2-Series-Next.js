@@ -7,7 +7,6 @@ import { Serie } from "@/types/series";
 import SearchBar from "@/components/SearchBar";
 import SeriesList from "@/components/SeriesList";
 import ConfirmModal from "@/components/ConfirmModal";
-import Link from "next/link";
 
 export default function HomePage() {
   // sacamos las series y la funcion de eliminar del contexto
@@ -45,24 +44,13 @@ export default function HomePage() {
   return (
     <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
       {/* encabezado principal */}
-      <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-        <div>
-          <span className="text-xs font-semibold uppercase tracking-wider text-[#60a5fa]">
-            Catálogo completo
-          </span>
-          <h1 className="mt-1 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
-            Explora tus Series
-          </h1>
-        </div>
-
-        {/* boton rapido para agregar nueva serie */}
-        <Link
-          href="/series/new"
-          className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#A50044] px-4 py-2.5 text-sm font-semibold text-white shadow-sm shadow-[#A50044]/30 ring-1 ring-[#c41555]/30 transition hover:bg-[#850036] active:scale-95 sm:w-auto"
-        >
-          <span>+</span>
-          <span>Crear Serie</span>
-        </Link>
+      <div>
+        <span className="text-xs font-semibold uppercase tracking-wider text-[#60a5fa]">
+          Catálogo completo
+        </span>
+        <h1 className="mt-1 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+          Explora tus Series
+        </h1>
       </div>
 
       {/* barra de busqueda y selector de generos */}
