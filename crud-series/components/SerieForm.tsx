@@ -142,7 +142,6 @@ export default function SerieForm({
             name="title"
             value={form.title}
             onChange={handleChange}
-            placeholder="Ej. The Flash, Breaking Bad, Jujutsu Kaisen..."
             className={`mt-1.5 w-full rounded-lg border bg-[#172033] px-3.5 py-2.5 text-sm text-white placeholder-slate-400 outline-none transition focus:ring-1 ${
               errors.title
                 ? "border-rose-500 focus:border-rose-500 focus:ring-rose-500"
@@ -164,7 +163,6 @@ export default function SerieForm({
             name="genre"
             value={form.genre}
             onChange={handleChange}
-            placeholder="Ej. Drama, Anime, Ciencia Ficción..."
             className={`mt-1.5 w-full rounded-lg border bg-[#172033] px-3.5 py-2.5 text-sm text-white placeholder-slate-400 outline-none transition focus:ring-1 ${
               errors.genre
                 ? "border-rose-500 focus:border-rose-500 focus:ring-rose-500"
@@ -186,7 +184,6 @@ export default function SerieForm({
             name="platform"
             value={form.platform}
             onChange={handleChange}
-            placeholder="Ej. Netflix, HBO Max, Prime Video..."
             className={`mt-1.5 w-full rounded-lg border bg-[#172033] px-3.5 py-2.5 text-sm text-white placeholder-slate-400 outline-none transition focus:ring-1 ${
               errors.platform
                 ? "border-rose-500 focus:border-rose-500 focus:ring-rose-500"
