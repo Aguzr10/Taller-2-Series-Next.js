@@ -13,9 +13,9 @@ interface SeriesCardProps {
 
 export default function SeriesCard({ serie, onDeleteRequest }: SeriesCardProps) {
   return (
-    <div className="group flex flex-col overflow-hidden rounded-xl border border-neutral-800 bg-neutral-900/60 shadow-sm transition hover:border-neutral-700 hover:shadow-md">
+    <div className="group flex flex-col overflow-hidden rounded-xl border border-[#172338] bg-[#0c1424]/90 shadow-sm transition hover:border-[#283e66] hover:shadow-lg hover:shadow-[#004D98]/10">
       {/* contenedor de imagen con badges y boton de favoritos */}
-      <div className="relative aspect-16/10 w-full overflow-hidden bg-neutral-800">
+      <div className="relative aspect-16/10 w-full overflow-hidden bg-[#070b14]">
         <img
           src={serie.image}
           alt={serie.title}
@@ -39,9 +39,9 @@ export default function SeriesCard({ serie, onDeleteRequest }: SeriesCardProps) 
           </span>
         </div>
 
-        {/* badge con el rating */}
+        {/* badge con el rating dorado estilo escudo */}
         <div className="absolute bottom-2.5 right-2.5">
-          <span className="inline-flex items-center gap-1 rounded-md bg-amber-500/20 px-2 py-1 text-xs font-bold text-amber-300 backdrop-blur-xs">
+          <span className="inline-flex items-center gap-1 rounded-md bg-[#EDBB00]/15 px-2 py-1 text-xs font-bold text-[#EDBB00] ring-1 ring-[#EDBB00]/30 backdrop-blur-xs">
             ★ {serie.rating.toFixed(1)}
           </span>
         </div>
@@ -50,7 +50,7 @@ export default function SeriesCard({ serie, onDeleteRequest }: SeriesCardProps) 
       {/* cuerpo de la tarjeta con informacion */}
       <div className="flex flex-1 flex-col p-4">
         <div className="flex-1">
-          <h3 className="text-lg font-bold text-white line-clamp-1 group-hover:text-indigo-400 transition">
+          <h3 className="text-lg font-bold text-white line-clamp-1 group-hover:text-[#60a5fa] transition">
             {serie.title}
           </h3>
           <p className="mt-1 text-xs font-medium text-neutral-400">
@@ -62,10 +62,10 @@ export default function SeriesCard({ serie, onDeleteRequest }: SeriesCardProps) 
         </div>
 
         {/* barra de acciones: ver detalle, editar y eliminar */}
-        <div className="mt-4 flex items-center justify-between border-t border-neutral-800/80 pt-3 gap-2">
+        <div className="mt-4 flex items-center justify-between border-t border-[#172338]/80 pt-3 gap-2">
           <Link
             href={`/series/${serie.id}`}
-            className="text-xs font-semibold text-indigo-400 hover:text-indigo-300 transition"
+            className="text-xs font-semibold text-[#60a5fa] hover:text-[#93c5fd] transition"
           >
             Ver detalle →
           </Link>
@@ -73,7 +73,7 @@ export default function SeriesCard({ serie, onDeleteRequest }: SeriesCardProps) 
           <div className="flex items-center gap-1.5">
             <Link
               href={`/series/${serie.id}/edit`}
-              className="rounded-md px-2.5 py-1 text-xs font-medium text-neutral-300 hover:bg-neutral-800 hover:text-white transition"
+              className="rounded-md px-2.5 py-1 text-xs font-medium text-neutral-300 hover:bg-[#15233a] hover:text-white transition"
             >
               Editar
             </Link>

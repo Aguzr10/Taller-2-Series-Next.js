@@ -14,7 +14,7 @@ export default function Navbar() {
   const isActive = (path: string) => pathname === path;
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-neutral-800 bg-neutral-950/80 backdrop-blur-md">
+    <header className="sticky top-0 z-40 w-full border-b border-[#172338] bg-[#070b14]/85 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
         {/* logo de la app con icono de television */}
         <Link
@@ -42,13 +42,13 @@ export default function Navbar() {
         </Link>
 
         {/* enlaces de navegacion */}
-        <nav className="flex items-center gap-2 sm:gap-4">
+        <nav className="flex items-center gap-2 sm:gap-3">
           <Link
             href="/"
-            className={`rounded-md px-3 py-1.5 text-sm font-medium transition ${
+            className={`rounded-lg px-3 py-1.5 text-sm font-medium transition ${
               isActive("/")
-                ? "bg-neutral-800 text-white"
-                : "text-neutral-400 hover:bg-neutral-900 hover:text-white"
+                ? "bg-[#131f35] text-white ring-1 ring-[#1f3254]"
+                : "text-neutral-400 hover:bg-[#10192b] hover:text-white"
             }`}
           >
             Catálogo
@@ -56,16 +56,16 @@ export default function Navbar() {
 
           <Link
             href="/favoritos"
-            className={`relative rounded-md px-3 py-1.5 text-sm font-medium transition ${
+            className={`relative rounded-lg px-3 py-1.5 text-sm font-medium transition ${
               isActive("/favoritos")
-                ? "bg-neutral-800 text-white"
-                : "text-neutral-400 hover:bg-neutral-900 hover:text-white"
+                ? "bg-[#131f35] text-white ring-1 ring-[#1f3254]"
+                : "text-neutral-400 hover:bg-[#10192b] hover:text-white"
             }`}
           >
             Favoritos
             {/* badge con la cantidad de favoritos */}
             {favorites.length > 0 && (
-              <span className="ml-1.5 inline-flex items-center justify-center rounded-full bg-rose-600 px-1.5 py-0.5 text-xs font-semibold text-white">
+              <span className="ml-1.5 inline-flex items-center justify-center rounded-full bg-[#A50044] px-1.5 py-0.5 text-xs font-bold text-white shadow-xs">
                 {favorites.length}
               </span>
             )}
@@ -74,7 +74,7 @@ export default function Navbar() {
           {/* boton para ir al formulario de crear serie */}
           <Link
             href="/series/new"
-            className="inline-flex items-center gap-1.5 rounded-lg bg-indigo-600 px-3.5 py-1.5 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-500 active:scale-95"
+            className="inline-flex items-center gap-1.5 rounded-lg bg-[#A50044] px-3.5 py-1.5 text-sm font-semibold text-white shadow-sm shadow-[#A50044]/30 ring-1 ring-[#c41555]/30 transition hover:bg-[#850036] active:scale-95"
           >
             <span className="text-base leading-none">+</span>
             <span>Nueva Serie</span>

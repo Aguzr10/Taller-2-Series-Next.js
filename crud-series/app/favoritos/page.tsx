@@ -38,9 +38,9 @@ export default function FavoritosPage() {
       </nav>
 
       {/* encabezado de la seccion */}
-      <div className="mb-8 border-b border-neutral-800 pb-5">
+      <div className="mb-8 border-b border-[#172338] pb-5">
         <div className="flex items-center gap-2">
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-rose-500/20 text-rose-500">
+          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#A50044]/20 text-[#c41555] ring-1 ring-[#c41555]/30">
             ♥
           </span>
           <h1 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">

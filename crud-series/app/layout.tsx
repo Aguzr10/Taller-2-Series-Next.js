@@ -34,13 +34,15 @@ export default function RootLayout({
       lang="es"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-neutral-950 text-neutral-100 selection:bg-indigo-600 selection:text-white">
+      <body className="min-h-full flex flex-col bg-[#070b14] text-neutral-100 selection:bg-[#A50044] selection:text-white">
         {/* envolvemos con el contexto para que cualquier pagina o componente acceda al estado */}
         <SeriesProvider>
+          {/* linea decorativa superior con los colores del barca */}
+          <div className="h-[2.5px] w-full bg-gradient-to-r from-[#004D98] via-[#A50044] to-[#EDBB00]" />
           <Navbar />
           <main className="flex-1">{children}</main>
           {/* pie de pagina sencillo */}
-          <footer className="border-t border-neutral-900 bg-neutral-950 py-6 text-center text-xs text-neutral-500">
+          <footer className="border-t border-[#131f37] bg-[#070b14] py-6 text-center text-xs text-neutral-500">
             <p>SeriesApp • Taller 2 de React y Next.js</p>
           </footer>
         </SeriesProvider>

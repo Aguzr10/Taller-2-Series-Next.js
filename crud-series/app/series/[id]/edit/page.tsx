@@ -42,7 +42,7 @@ export default function EditSeriePage() {
         </p>
         <Link
           href="/"
-          className="mt-6 inline-flex rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-500 transition"
+          className="mt-6 inline-flex rounded-lg bg-[#A50044] px-4 py-2 text-sm font-semibold text-white shadow-sm shadow-[#A50044]/30 ring-1 ring-[#c41555]/30 hover:bg-[#850036] transition"
         >
           Volver al catálogo
         </Link>
@@ -58,7 +58,7 @@ export default function EditSeriePage() {
           Catálogo
         </Link>
         <span>/</span>
-        <Link href={`/series/${serie.id}`} className="hover:text-white transition">
+        <Link href={`/series/${serie.id}`} className="hover:text-white transition line-clamp-1">
           {serie.title}
         </Link>
         <span>/</span>
@@ -66,9 +66,9 @@ export default function EditSeriePage() {
       </nav>
 
       {/* titulo y subtitulo de edicion */}
-      <div className="mb-8 border-b border-neutral-800 pb-5">
+      <div className="mb-8 border-b border-[#172338] pb-5">
         <h1 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
-          Editar Serie: <span className="text-indigo-400">{serie.title}</span>
+          Editar Serie: <span className="text-[#60a5fa]">{serie.title}</span>
         </h1>
         <p className="mt-1 text-sm text-neutral-400">
           Modifica los campos necesarios y guarda los cambios para actualizar el catálogo.
@@ -76,7 +76,7 @@ export default function EditSeriePage() {
       </div>
 
       {/* formulario con los datos actuales cargados */}
-      <div className="rounded-xl border border-neutral-800 bg-neutral-900/50 p-6 sm:p-8">
+      <div className="rounded-xl border border-[#172338] bg-[#0c1424]/60 p-6 sm:p-8">
         <SerieForm
           initialData={serie}
           onSubmit={handleSubmit}

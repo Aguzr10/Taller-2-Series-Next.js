@@ -30,7 +30,7 @@ export default function NewSeriePage() {
       </nav>
 
       {/* encabezado de la pagina */}
-      <div className="mb-8 border-b border-neutral-800 pb-5">
+      <div className="mb-8 border-b border-[#172338] pb-5">
         <h1 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
           Agregar Nueva Serie
         </h1>
@@ -40,7 +40,7 @@ export default function NewSeriePage() {
       </div>
 
       {/* contenedor del formulario */}
-      <div className="rounded-xl border border-neutral-800 bg-neutral-900/50 p-6 sm:p-8">
+      <div className="rounded-xl border border-[#172338] bg-[#0c1424]/60 p-6 sm:p-8">
         <SerieForm onSubmit={handleSubmit} buttonText="Guardar Serie" />
       </div>
     </div>

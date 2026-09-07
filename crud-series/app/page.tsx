@@ -47,7 +47,7 @@ export default function HomePage() {
       {/* encabezado principal */}
       <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <span className="text-xs font-semibold uppercase tracking-wider text-indigo-400">
+          <span className="text-xs font-semibold uppercase tracking-wider text-[#60a5fa]">
             Catálogo completo
           </span>
           <h1 className="mt-1 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
@@ -58,7 +58,7 @@ export default function HomePage() {
         {/* boton rapido para agregar nueva serie */}
         <Link
           href="/series/new"
-          className="inline-flex items-center justify-center gap-2 rounded-lg bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-500 active:scale-95 sm:w-auto"
+          className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#A50044] px-4 py-2.5 text-sm font-semibold text-white shadow-sm shadow-[#A50044]/30 ring-1 ring-[#c41555]/30 transition hover:bg-[#850036] active:scale-95 sm:w-auto"
         >
           <span>+</span>
           <span>Crear Serie</span>
@@ -85,8 +85,8 @@ export default function HomePage() {
                 onClick={() => setSelectedGenre(genre)}
                 className={`rounded-full px-3 py-1 text-xs font-medium transition capitalize shrink-0 ${
                   selectedGenre === genre
-                    ? "bg-indigo-600 text-white"
-                    : "bg-neutral-900 text-neutral-400 hover:bg-neutral-800 hover:text-white"
+                    ? "bg-[#A50044] text-white shadow-xs shadow-[#A50044]/30 ring-1 ring-[#c41555]/40"
+                    : "bg-[#0e1726] text-neutral-300 hover:bg-[#15233a] hover:text-white border border-[#1b2b45]"
                 }`}
               >
                 {genre}
@@ -111,7 +111,7 @@ export default function HomePage() {
               setSearchTerm("");
               setSelectedGenre("todos");
             }}
-            className="text-indigo-400 hover:text-indigo-300 transition"
+            className="text-[#60a5fa] hover:text-[#93c5fd] transition font-medium"
           >
             Limpiar filtros
           </button>

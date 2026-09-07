@@ -143,10 +143,10 @@ export default function SerieForm({
             value={form.title}
             onChange={handleChange}
             placeholder="Ej. The Flash, Breaking Bad, Jujutsu Kaisen..."
-            className={`mt-1.5 w-full rounded-lg border bg-neutral-900/90 px-3.5 py-2.5 text-sm text-white placeholder-neutral-500 outline-none transition focus:ring-1 ${
+            className={`mt-1.5 w-full rounded-lg border bg-[#0c1424]/90 px-3.5 py-2.5 text-sm text-white placeholder-neutral-500 outline-none transition focus:ring-1 ${
               errors.title
                 ? "border-rose-500 focus:border-rose-500 focus:ring-rose-500"
-                : "border-neutral-800 focus:border-indigo-500 focus:ring-indigo-500"
+                : "border-[#172338] focus:border-[#004D98] focus:ring-[#004D98]"
             }`}
           />
           {errors.title && (
@@ -165,10 +165,10 @@ export default function SerieForm({
             value={form.genre}
             onChange={handleChange}
             placeholder="Ej. Drama, Anime, Ciencia Ficción..."
-            className={`mt-1.5 w-full rounded-lg border bg-neutral-900/90 px-3.5 py-2.5 text-sm text-white placeholder-neutral-500 outline-none transition focus:ring-1 ${
+            className={`mt-1.5 w-full rounded-lg border bg-[#0c1424]/90 px-3.5 py-2.5 text-sm text-white placeholder-neutral-500 outline-none transition focus:ring-1 ${
               errors.genre
                 ? "border-rose-500 focus:border-rose-500 focus:ring-rose-500"
-                : "border-neutral-800 focus:border-indigo-500 focus:ring-indigo-500"
+                : "border-[#172338] focus:border-[#004D98] focus:ring-[#004D98]"
             }`}
           />
           {errors.genre && (
@@ -187,10 +187,10 @@ export default function SerieForm({
             value={form.platform}
             onChange={handleChange}
             placeholder="Ej. Netflix, HBO Max, Prime Video..."
-            className={`mt-1.5 w-full rounded-lg border bg-neutral-900/90 px-3.5 py-2.5 text-sm text-white placeholder-neutral-500 outline-none transition focus:ring-1 ${
+            className={`mt-1.5 w-full rounded-lg border bg-[#0c1424]/90 px-3.5 py-2.5 text-sm text-white placeholder-neutral-500 outline-none transition focus:ring-1 ${
               errors.platform
                 ? "border-rose-500 focus:border-rose-500 focus:ring-rose-500"
-                : "border-neutral-800 focus:border-indigo-500 focus:ring-indigo-500"
+                : "border-[#172338] focus:border-[#004D98] focus:ring-[#004D98]"
             }`}
           />
           {errors.platform && (
@@ -209,10 +209,10 @@ export default function SerieForm({
             min={1}
             value={form.seasons}
             onChange={handleChange}
-            className={`mt-1.5 w-full rounded-lg border bg-neutral-900/90 px-3.5 py-2.5 text-sm text-white placeholder-neutral-500 outline-none transition focus:ring-1 ${
+            className={`mt-1.5 w-full rounded-lg border bg-[#0c1424]/90 px-3.5 py-2.5 text-sm text-white placeholder-neutral-500 outline-none transition focus:ring-1 ${
               errors.seasons
                 ? "border-rose-500 focus:border-rose-500 focus:ring-rose-500"
-                : "border-neutral-800 focus:border-indigo-500 focus:ring-indigo-500"
+                : "border-[#172338] focus:border-[#004D98] focus:ring-[#004D98]"
             }`}
           />
           {errors.seasons && (
@@ -233,10 +233,10 @@ export default function SerieForm({
             name="rating"
             value={form.rating}
             onChange={handleChange}
-            className={`mt-1.5 w-full rounded-lg border bg-neutral-900/90 px-3.5 py-2.5 text-sm text-white placeholder-neutral-500 outline-none transition focus:ring-1 ${
+            className={`mt-1.5 w-full rounded-lg border bg-[#0c1424]/90 px-3.5 py-2.5 text-sm text-white placeholder-neutral-500 outline-none transition focus:ring-1 ${
               errors.rating
                 ? "border-rose-500 focus:border-rose-500 focus:ring-rose-500"
-                : "border-neutral-800 focus:border-indigo-500 focus:ring-indigo-500"
+                : "border-[#172338] focus:border-[#004D98] focus:ring-[#004D98]"
             }`}
           />
           {errors.rating && (
@@ -255,10 +255,10 @@ export default function SerieForm({
             value={form.image}
             onChange={handleChange}
             placeholder="https://ejemplo.com/poster.jpg"
-            className={`mt-1.5 w-full rounded-lg border bg-neutral-900/90 px-3.5 py-2.5 text-sm text-white placeholder-neutral-500 outline-none transition focus:ring-1 ${
+            className={`mt-1.5 w-full rounded-lg border bg-[#0c1424]/90 px-3.5 py-2.5 text-sm text-white placeholder-neutral-500 outline-none transition focus:ring-1 ${
               errors.image
                 ? "border-rose-500 focus:border-rose-500 focus:ring-rose-500"
-                : "border-neutral-800 focus:border-indigo-500 focus:ring-indigo-500"
+                : "border-[#172338] focus:border-[#004D98] focus:ring-[#004D98]"
             }`}
           />
           {errors.image && (
@@ -267,7 +267,7 @@ export default function SerieForm({
 
           {/* preview de la imagen en vivo */}
           {form.image && !errors.image && (
-            <div className="mt-3 flex items-center gap-3 rounded-lg border border-neutral-800 bg-neutral-950 p-2.5">
+            <div className="mt-3 flex items-center gap-3 rounded-lg border border-[#172338] bg-[#070b14] p-2.5">
               <img
                 src={form.image}
                 alt="Vista previa"
@@ -298,10 +298,10 @@ export default function SerieForm({
             value={form.description}
             onChange={handleChange}
             placeholder="Escribe un breve resumen sobre la trama principal de la serie..."
-            className={`mt-1.5 w-full rounded-lg border bg-neutral-900/90 px-3.5 py-2.5 text-sm text-white placeholder-neutral-500 outline-none transition focus:ring-1 ${
+            className={`mt-1.5 w-full rounded-lg border bg-[#0c1424]/90 px-3.5 py-2.5 text-sm text-white placeholder-neutral-500 outline-none transition focus:ring-1 ${
               errors.description
                 ? "border-rose-500 focus:border-rose-500 focus:ring-rose-500"
-                : "border-neutral-800 focus:border-indigo-500 focus:ring-indigo-500"
+                : "border-[#172338] focus:border-[#004D98] focus:ring-[#004D98]"
             }`}
           />
           {errors.description && (
@@ -311,16 +311,16 @@ export default function SerieForm({
       </div>
 
       {/* botones de accion del formulario */}
-      <div className="flex items-center justify-end gap-3 pt-4 border-t border-neutral-800">
+      <div className="flex items-center justify-end gap-3 pt-4 border-t border-[#172338]">
         <Link
           href="/"
-          className="rounded-lg border border-neutral-700 bg-neutral-800 px-4 py-2 text-sm font-medium text-neutral-300 transition hover:bg-neutral-700 active:scale-95"
+          className="rounded-lg border border-[#1f3254] bg-[#131f35] px-4 py-2 text-sm font-medium text-neutral-200 transition hover:bg-[#1a2b48] active:scale-95"
         >
           Cancelar
         </Link>
         <button
           type="submit"
-          className="inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-500 active:scale-95"
+          className="inline-flex items-center gap-2 rounded-lg bg-[#A50044] px-5 py-2 text-sm font-semibold text-white shadow-sm shadow-[#A50044]/30 ring-1 ring-[#c41555]/30 transition hover:bg-[#850036] active:scale-95"
         >
           {buttonText}
         </button>

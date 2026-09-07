@@ -28,8 +28,8 @@ export default function SeriesList({
   // si no hay elementos mostramos mensaje limpio
   if (series.length === 0) {
     return (
-      <div className="flex flex-col items-center justify-center rounded-xl border border-dashed border-neutral-800 bg-neutral-900/30 p-12 text-center">
-        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-neutral-800 text-neutral-400">
+      <div className="flex flex-col items-center justify-center rounded-xl border border-dashed border-[#172338] bg-[#0c1424]/40 p-12 text-center">
+        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#131f35] text-[#60a5fa]">
           <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <rect width="20" height="15" x="2" y="7" rx="2" ry="2" />
             <polyline points="17 2 12 7 7 2" />
@@ -41,7 +41,7 @@ export default function SeriesList({
         </p>
         <Link
           href="/series/new"
-          className="mt-4 inline-flex items-center gap-1.5 rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-500"
+          className="mt-4 inline-flex items-center gap-1.5 rounded-lg bg-[#A50044] px-4 py-2 text-sm font-semibold text-white shadow-sm shadow-[#A50044]/30 ring-1 ring-[#c41555]/30 transition hover:bg-[#850036] active:scale-95"
         >
           + Agregar Serie
         </Link>
