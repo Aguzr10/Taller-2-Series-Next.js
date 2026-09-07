@@ -1,69 +1,155 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+// pagina principal de catalogo con busqueda en tiempo real y eliminacion
+import { useState, useMemo } from "react";
+import { useSeries } from "@/context/SeriesContext";
+import { Serie } from "@/types/series";
+import SearchBar from "@/components/SearchBar";
+import SeriesList from "@/components/SeriesList";
+import ConfirmModal from "@/components/ConfirmModal";
+import Link from "next/link";
+
+export default function HomePage() {
+  // sacamos las series y la funcion de eliminar del contexto
+  const { series, loading, deleteSerie } = useSeries();
+
+  // estados para filtrar por busqueda y controlar el modal de confirmacion
+  const [searchTerm, setSearchTerm] = useState("");
+  const [selectedGenre, setSelectedGenre] = useState("todos");
+  const [serieToDelete, setSerieToDelete] = useState<Serie | null>(null);
+
+  // obtenemos la lista unica de generos para los botones de filtro
+  const genres = useMemo(() => {
+    const list = new Set<string>();
+    series.forEach((s) => {
+      // separamos si tiene diagonales para filtros mas limpios
+      s.genre.split("/").forEach((g) => list.add(g.trim()));
+    });
+    return ["todos", ...Array.from(list)];
+  }, [series]);
+
+  // filtramos las series segun el termino de busqueda y el genero seleccionado
+  const filteredSeries = useMemo(() => {
+    return series.filter((serie) => {
+      const matchesSearch = serie.title
+        .toLowerCase()
+        .includes(searchTerm.toLowerCase());
+      const matchesGenre =
+        selectedGenre === "todos" ||
+        serie.genre.toLowerCase().includes(selectedGenre.toLowerCase());
+      return matchesSearch && matchesGenre;
+    });
+  }, [series, searchTerm, selectedGenre]);
+
+  // confirma la eliminacion y cierra el modal
+  const handleConfirmDelete = () => {
+    if (serieToDelete) {
+      deleteSerie(serieToDelete.id);
+      setSerieToDelete(null);
+    }
+  };
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
+    <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
+      {/* encabezado principal */}
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <span className="text-xs font-semibold uppercase tracking-wider text-indigo-400">
+            Catálogo completo
+          </span>
+          <h1 className="mt-1 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+            Explora tus Series
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="mt-1 text-sm text-neutral-400">
+            Busca, organiza y administra tus series favoritas con persistencia local.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+
+        {/* boton rapido para agregar nueva serie */}
+        <Link
+          href="/series/new"
+          className="inline-flex items-center justify-center gap-2 rounded-lg bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-500 active:scale-95 sm:w-auto"
+        >
+          <span>+</span>
+          <span>Crear Serie</span>
+        </Link>
+      </div>
+
+      {/* barra de busqueda y selector de generos */}
+      <div className="mt-8 space-y-4">
+        <SearchBar
+          onSearch={(term) => setSearchTerm(term)}
+          placeholder="Buscar serie por título (ej. The Flash, House, Haikyuu)..."
+        />
+
+        {/* chips de filtro rapido por genero */}
+        {genres.length > 1 && (
+          <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
+            <span className="text-xs font-medium text-neutral-500 shrink-0">
+              Género:
+            </span>
+            {genres.map((genre) => (
+              <button
+                key={genre}
+                type="button"
+                onClick={() => setSelectedGenre(genre)}
+                className={`rounded-full px-3 py-1 text-xs font-medium transition capitalize shrink-0 ${
+                  selectedGenre === genre
+                    ? "bg-indigo-600 text-white"
+                    : "bg-neutral-900 text-neutral-400 hover:bg-neutral-800 hover:text-white"
+                }`}
+              >
+                {genre}
+              </button>
+            ))}
+          </div>
+        )}
+      </div>
+
+      {/* contador de resultados */}
+      <div className="mt-6 mb-4 flex items-center justify-between text-xs text-neutral-400">
+        <p>
+          {loading
+            ? "Cargando catálogo..."
+            : `Mostrando ${filteredSeries.length} de ${series.length} series`}
+        </p>
+
+        {(searchTerm || selectedGenre !== "todos") && (
+          <button
+            type="button"
+            onClick={() => {
+              setSearchTerm("");
+              setSelectedGenre("todos");
+            }}
+            className="text-indigo-400 hover:text-indigo-300 transition"
           >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+            Limpiar filtros
+          </button>
+        )}
+      </div>
+
+      {/* grilla de series o skeletons si esta cargando */}
+      <SeriesList
+        series={filteredSeries}
+        loading={loading}
+        emptyMessage={
+          searchTerm || selectedGenre !== "todos"
+            ? "No hay series que coincidan con tu búsqueda."
+            : "No tienes series registradas todavía."
+        }
+        onDeleteRequest={(serie) => setSerieToDelete(serie)}
+      />
+
+      {/* modal de confirmacion antes de eliminar */}
+      <ConfirmModal
+        isOpen={Boolean(serieToDelete)}
+        title="¿Eliminar serie?"
+        message={`¿Estás seguro de que deseas eliminar "${serieToDelete?.title}"? Se borrará de la lista y de tus favoritos.`}
+        confirmText="Sí, eliminar"
+        cancelText="Cancelar"
+        onConfirm={handleConfirmDelete}
+        onCancel={() => setSerieToDelete(null)}
+      />
     </div>
   );
 }
