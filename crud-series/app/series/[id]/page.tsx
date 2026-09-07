@@ -78,10 +78,10 @@ export default function SerieDetailPage() {
       </Link>
 
       {/* tarjeta principal con la informacion detallada */}
-      <div className="overflow-hidden rounded-2xl border border-[#172338] bg-[#0c1424]/90 shadow-xl">
+      <div className="overflow-hidden rounded-2xl border border-slate-800 bg-[#172033] shadow-xl">
         <div className="grid grid-cols-1 md:grid-cols-3">
           {/* portada / poster grande */}
-          <div className="relative aspect-3/4 md:aspect-auto md:h-full bg-[#070b14] overflow-hidden">
+          <div className="relative aspect-3/4 md:aspect-auto md:h-full bg-slate-900 overflow-hidden">
             <img
               src={serie.image}
               alt={serie.title}
@@ -98,16 +98,16 @@ export default function SerieDetailPage() {
             <div>
               {/* badges de plataforma, temporadas y rating */}
               <div className="flex flex-wrap items-center gap-2">
-                <span className="inline-flex rounded-md bg-[#004D98]/20 px-2.5 py-1 text-xs font-semibold text-[#60a5fa] ring-1 ring-[#004D98]/30">
+                <span className="inline-flex rounded-md bg-[#004D98]/25 px-2.5 py-1 text-xs font-semibold text-blue-300 ring-1 ring-[#004D98]/40">
                   {serie.platform}
                 </span>
-                <span className="inline-flex rounded-md bg-[#131f35] px-2.5 py-1 text-xs font-medium text-neutral-300 ring-1 ring-[#1f3254]">
+                <span className="inline-flex rounded-md bg-slate-800 px-2.5 py-1 text-xs font-medium text-slate-200 ring-1 ring-slate-700/60">
                   {serie.genre}
                 </span>
-                <span className="inline-flex rounded-md bg-[#131f35] px-2.5 py-1 text-xs font-medium text-neutral-300 ring-1 ring-[#1f3254]">
+                <span className="inline-flex rounded-md bg-slate-800 px-2.5 py-1 text-xs font-medium text-slate-200 ring-1 ring-slate-700/60">
                   {serie.seasons} {serie.seasons === 1 ? "temporada" : "temporadas"}
                 </span>
-                <span className="inline-flex items-center gap-1 rounded-md bg-[#EDBB00]/15 px-2.5 py-1 text-xs font-bold text-[#EDBB00] ring-1 ring-[#EDBB00]/30">
+                <span className="inline-flex items-center gap-1 rounded-md bg-black/75 px-2.5 py-1 text-xs font-bold text-amber-300 ring-1 ring-white/10 shadow-xs">
                   ★ {serie.rating.toFixed(1)} / 10
                 </span>
               </div>
@@ -119,21 +119,21 @@ export default function SerieDetailPage() {
 
               {/* sinopsis completa */}
               <div className="mt-6 space-y-2">
-                <h3 className="text-xs font-semibold uppercase tracking-wider text-neutral-400">
+                <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-400">
                   Sinopsis
                 </h3>
-                <p className="text-sm leading-relaxed text-neutral-300 whitespace-pre-line">
+                <p className="text-sm leading-relaxed text-slate-300 whitespace-pre-line">
                   {serie.description}
                 </p>
               </div>
             </div>
 
             {/* barra inferior de acciones */}
-            <div className="mt-8 flex flex-wrap items-center justify-between gap-4 border-t border-[#172338] pt-6">
+            <div className="mt-8 flex flex-wrap items-center justify-between gap-4 border-t border-slate-800/80 pt-6">
               {/* boton interactivo de favoritos con texto */}
               <div className="flex items-center gap-2">
                 <FavoriteButton serieId={serie.id} size="md" />
-                <span className="text-xs font-medium text-neutral-300">
+                <span className="text-xs font-medium text-slate-300">
                   {favorite ? "En tus favoritos" : "Marcar como favorita"}
                 </span>
               </div>
@@ -142,7 +142,7 @@ export default function SerieDetailPage() {
               <div className="flex items-center gap-2">
                 <Link
                   href={`/series/${serie.id}/edit`}
-                  className="rounded-lg border border-[#1f3254] bg-[#131f35] px-3.5 py-2 text-xs font-medium text-neutral-200 transition hover:bg-[#1a2b48] active:scale-95"
+                  className="rounded-lg border border-slate-700 bg-slate-800 px-3.5 py-2 text-xs font-medium text-slate-200 transition hover:bg-slate-700 active:scale-95"
                 >
                   Editar serie
                 </Link>

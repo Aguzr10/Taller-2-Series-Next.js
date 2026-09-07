@@ -63,7 +63,7 @@ export default function HomePage() {
         {/* chips de filtro rapido por genero */}
         {genres.length > 1 && (
           <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
-            <span className="text-xs font-medium text-neutral-500 shrink-0">
+            <span className="text-xs font-medium text-slate-400 shrink-0">
               Género:
             </span>
             {genres.map((genre) => (
@@ -74,7 +74,7 @@ export default function HomePage() {
                 className={`rounded-full px-3 py-1 text-xs font-medium transition capitalize shrink-0 ${
                   selectedGenre === genre
                     ? "bg-[#A50044] text-white shadow-xs shadow-[#A50044]/30 ring-1 ring-[#c41555]/40"
-                    : "bg-[#0e1726] text-neutral-300 hover:bg-[#15233a] hover:text-white border border-[#1b2b45]"
+                    : "bg-slate-800/90 text-slate-200 hover:bg-slate-700 hover:text-white border border-slate-700/60"
                 }`}
               >
                 {genre}
@@ -85,7 +85,7 @@ export default function HomePage() {
       </div>
 
       {/* contador de resultados */}
-      <div className="mt-6 mb-4 flex items-center justify-between text-xs text-neutral-400">
+      <div className="mt-6 mb-4 flex items-center justify-between text-xs text-slate-400">
         <p>
           {loading
             ? "Cargando catálogo..."
@@ -99,7 +99,7 @@ export default function HomePage() {
               setSearchTerm("");
               setSelectedGenre("todos");
             }}
-            className="text-[#60a5fa] hover:text-[#93c5fd] transition font-medium"
+            className="text-blue-400 hover:text-blue-300 transition font-medium"
           >
             Limpiar filtros
           </button>

@@ -34,7 +34,7 @@ export default function RootLayout({
       lang="es"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-[#070b14] text-neutral-100 selection:bg-[#A50044] selection:text-white">
+      <body className="min-h-full flex flex-col bg-[#0f172a] text-slate-100 selection:bg-[#A50044] selection:text-white">
         {/* envolvemos con el contexto para que cualquier pagina o componente acceda al estado */}
         <SeriesProvider>
           {/* linea decorativa superior con los colores blaugrana */}
@@ -42,7 +42,7 @@ export default function RootLayout({
           <Navbar />
           <main className="flex-1">{children}</main>
           {/* pie de pagina sencillo */}
-          <footer className="border-t border-[#131f37] bg-[#070b14] py-6 text-center text-xs text-neutral-500">
+          <footer className="border-t border-slate-800 bg-[#0f172a] py-6 text-center text-xs text-slate-400">
             <p>SeriesApp • Taller 2 de React y Next.js</p>
           </footer>
         </SeriesProvider>

@@ -48,7 +48,7 @@ export default function SearchBar({
         value={term}
         onChange={(e) => setTerm(e.target.value)}
         placeholder={placeholder}
-        className="w-full rounded-lg border border-[#172338] bg-[#0c1424]/90 py-2.5 pl-9 pr-8 text-sm text-white placeholder-neutral-500 outline-none transition focus:border-[#004D98] focus:ring-1 focus:ring-[#004D98]"
+        className="w-full rounded-lg border border-slate-700/80 bg-[#172033] py-2.5 pl-9 pr-8 text-sm text-white placeholder-slate-400 outline-none transition focus:border-[#004D98] focus:ring-1 focus:ring-[#004D98]"
       />
 
       {/* boton para limpiar el input si hay algo escrito */}

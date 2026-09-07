@@ -28,15 +28,15 @@ export default function SeriesList({
   // si no hay elementos mostramos mensaje limpio
   if (series.length === 0) {
     return (
-      <div className="flex flex-col items-center justify-center rounded-xl border border-dashed border-[#172338] bg-[#0c1424]/40 p-12 text-center">
-        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#131f35] text-[#60a5fa]">
+      <div className="flex flex-col items-center justify-center rounded-xl border border-dashed border-slate-700 bg-[#172033]/60 p-12 text-center">
+        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-slate-800 text-blue-400">
           <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <rect width="20" height="15" x="2" y="7" rx="2" ry="2" />
             <polyline points="17 2 12 7 7 2" />
           </svg>
         </div>
         <h4 className="mt-4 text-base font-semibold text-white">{emptyMessage}</h4>
-        <p className="mt-1 text-sm text-neutral-400">
+        <p className="mt-1 text-sm text-slate-400">
           Prueba cambiando el término de búsqueda o agrega una nueva serie.
         </p>
         <Link

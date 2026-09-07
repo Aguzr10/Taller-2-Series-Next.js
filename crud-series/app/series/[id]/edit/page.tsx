@@ -66,17 +66,17 @@ export default function EditSeriePage() {
       </nav>
 
       {/* titulo y subtitulo de edicion */}
-      <div className="mb-8 border-b border-[#172338] pb-5">
+      <div className="mb-8 border-b border-slate-800 pb-5">
         <h1 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
-          Editar Serie: <span className="text-[#60a5fa]">{serie.title}</span>
+          Editar Serie: <span className="text-blue-400">{serie.title}</span>
         </h1>
-        <p className="mt-1 text-sm text-neutral-400">
+        <p className="mt-1 text-sm text-slate-400">
           Modifica los campos necesarios y guarda los cambios para actualizar el catálogo.
         </p>
       </div>
 
       {/* formulario con los datos actuales cargados */}
-      <div className="rounded-xl border border-[#172338] bg-[#0c1424]/60 p-6 sm:p-8">
+      <div className="rounded-xl border border-slate-800 bg-[#172033]/80 p-6 sm:p-8">
         <SerieForm
           initialData={serie}
           onSubmit={handleSubmit}

@@ -41,16 +41,16 @@ export default function ConfirmModal({
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-xs">
       {/* cuadro del modal */}
-      <div className="w-full max-w-md rounded-xl border border-[#172338] bg-[#0c1424] p-6 shadow-2xl">
+      <div className="w-full max-w-md rounded-xl border border-slate-800 bg-[#172033] p-6 shadow-2xl">
         <h3 className="text-lg font-semibold text-white">{title}</h3>
-        <p className="mt-2 text-sm text-neutral-300">{message}</p>
+        <p className="mt-2 text-sm text-slate-300">{message}</p>
 
         {/* botones de accion */}
         <div className="mt-6 flex items-center justify-end gap-3">
           <button
             type="button"
             onClick={onCancel}
-            className="rounded-lg border border-[#1f3254] bg-[#131f35] px-4 py-2 text-sm font-medium text-neutral-200 transition hover:bg-[#1a2b48] active:scale-95"
+            className="rounded-lg border border-slate-700 bg-slate-800 px-4 py-2 text-sm font-medium text-slate-200 transition hover:bg-slate-700 active:scale-95"
           >
             {cancelText}
           </button>

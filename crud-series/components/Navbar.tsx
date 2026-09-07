@@ -14,7 +14,7 @@ export default function Navbar() {
   const isActive = (path: string) => pathname === path;
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-[#172338] bg-[#070b14]/85 backdrop-blur-md">
+    <header className="sticky top-0 z-40 w-full border-b border-slate-800 bg-[#0f172a]/90 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
         {/* logo de la app con icono de television */}
         <Link
@@ -47,8 +47,8 @@ export default function Navbar() {
             href="/"
             className={`rounded-lg px-3 py-1.5 text-sm font-medium transition ${
               isActive("/")
-                ? "bg-[#131f35] text-white ring-1 ring-[#1f3254]"
-                : "text-neutral-400 hover:bg-[#10192b] hover:text-white"
+                ? "bg-slate-800 text-white ring-1 ring-slate-700/60"
+                : "text-slate-300 hover:bg-slate-800/60 hover:text-white"
             }`}
           >
             Catálogo
@@ -58,8 +58,8 @@ export default function Navbar() {
             href="/favoritos"
             className={`relative rounded-lg px-3 py-1.5 text-sm font-medium transition ${
               isActive("/favoritos")
-                ? "bg-[#131f35] text-white ring-1 ring-[#1f3254]"
-                : "text-neutral-400 hover:bg-[#10192b] hover:text-white"
+                ? "bg-slate-800 text-white ring-1 ring-slate-700/60"
+                : "text-slate-300 hover:bg-slate-800/60 hover:text-white"
             }`}
           >
             Favoritos
