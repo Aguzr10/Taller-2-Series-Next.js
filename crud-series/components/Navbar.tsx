@@ -16,16 +16,28 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-40 w-full border-b border-neutral-800 bg-neutral-950/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
-        {/* logo y nombre de la app */}
+        {/* logo de la app con icono de television */}
         <Link
           href="/"
-          className="flex items-center gap-2 text-xl font-bold tracking-tight text-white transition hover:opacity-90"
+          className="flex items-center gap-2.5 text-xl font-bold tracking-tight text-white transition hover:opacity-95"
         >
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-indigo-600 text-white font-extrabold shadow-sm">
-            S
+          {/* icono de television estilizada con degradado blaugrana */}
+          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-[#004D98] to-[#A50044] text-white shadow-md shadow-[#004D98]/30 ring-1 ring-white/10">
+            <svg
+              className="h-5 w-5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+              <path d="m17 2-5 5-5-5" />
+            </svg>
           </span>
-          <span>
-            Series<span className="text-indigo-400">App</span>
+          <span className="tracking-tight">
+            Series<span className="text-[#c41555]">App</span>
           </span>
         </Link>
 
