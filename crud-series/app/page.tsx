@@ -57,7 +57,7 @@ export default function HomePage() {
       <div className="mt-8 space-y-4">
         <SearchBar
           onSearch={(term) => setSearchTerm(term)}
-          placeholder="Buscar serie por título..."
+          placeholder="Buscar serie por título"
         />
 
         {/* chips de filtro rapido por genero */}

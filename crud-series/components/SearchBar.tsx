@@ -11,7 +11,7 @@ interface SearchBarProps {
 
 export default function SearchBar({
   onSearch,
-  placeholder = "Buscar serie por título...",
+  placeholder = "Buscar serie por título",
 }: SearchBarProps) {
   // estado local del input
   const [term, setTerm] = useState("");
