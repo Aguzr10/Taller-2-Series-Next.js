@@ -1,6 +1,6 @@
 # Taller 2: CRUD de Series (Next.js)
 
-Proyecto desarrollado para el Taller 2 de la clase de Desarrollo Web. Es un CRUD completo de series de televisión construido con Next.js (App Router), TypeScript y Tailwind CSS, guardando los datos en el `localStorage` del navegador.
+Proyecto desarrollado para el Taller 2 de la clase de Programación con tecnologías Web. Es un CRUD completo de series de televisión construido con Next.js (App Router), TypeScript y Tailwind CSS, guardando los datos en el `localStorage` del navegador.
 
 ---
 
