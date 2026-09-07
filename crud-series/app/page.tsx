@@ -18,15 +18,8 @@ export default function HomePage() {
   const [selectedGenre, setSelectedGenre] = useState("todos");
   const [serieToDelete, setSerieToDelete] = useState<Serie | null>(null);
 
-  // obtenemos la lista unica de generos para los botones de filtro
-  const genres = useMemo(() => {
-    const list = new Set<string>();
-    series.forEach((s) => {
-      // separamos si tiene diagonales para filtros mas limpios
-      s.genre.split("/").forEach((g) => list.add(g.trim()));
-    });
-    return ["todos", ...Array.from(list)];
-  }, [series]);
+  // generos principales para no saturar la barra con demasiados botones
+  const genres = ["todos", "Acción", "Anime", "Drama", "Misterio"];
 
   // filtramos las series segun el termino de busqueda y el genero seleccionado
   const filteredSeries = useMemo(() => {
@@ -60,9 +53,6 @@ export default function HomePage() {
           <h1 className="mt-1 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
             Explora tus Series
           </h1>
-          <p className="mt-1 text-sm text-neutral-400">
-            Busca, organiza y administra tus series favoritas con persistencia local.
-          </p>
         </div>
 
         {/* boton rapido para agregar nueva serie */}
@@ -79,7 +69,7 @@ export default function HomePage() {
       <div className="mt-8 space-y-4">
         <SearchBar
           onSearch={(term) => setSearchTerm(term)}
-          placeholder="Buscar serie por título (ej. The Flash, House, Haikyuu)..."
+          placeholder="Buscar serie por título..."
         />
 
         {/* chips de filtro rapido por genero */}
